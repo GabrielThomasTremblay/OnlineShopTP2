@@ -3,7 +3,11 @@
     <head>
         <script src="TP2DataBase.js"></script>
     </head>
-    <body>
-        <div onclick="openLogIn()", style="width: 200px; height: 200px; color: black;"></div>
+    <body style="background-color: rgb(50, 21, 153);">
+        <form onclick="openLogIn(document.getElementById('username'), document.getElementById('password'))">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit">
+        </form>
     </body>
 </html>
