@@ -1,15 +1,16 @@
-function openLogIn(username, password){
+'use strict'
+function openLogIn(Username, Password){
     
-    let openRequest = indexedDB.open("Users")
+    let openRequest = indexedDB.open("Users", 1);
 
     openRequest.onupgradeneeded = function(){
 
-        let UserDataBase = openRequest.result;
-        UserDataBase.createObjectStore('ListOfCurrentUsers', {keyPath: 'username'});
+        let db = openRequest.result;
+        UserDataBase = db.createObjectStore('ListOfCurrentUsers', {keyPath: 'username'});
 
         UserDataBase.createIndex("username", "username", {unique: true});
         UserDataBase.createIndex("password", "password", {unique: false});
-        UserDataBase.createIndex("JSONData", "JSONData", {unique: true});
+        
     }
     openRequest.onerror = function(){
 
@@ -20,9 +21,38 @@ function openLogIn(username, password){
         console.log("Base de donner ouverte avec succes");
         let UserDataBase = openRequest.result;
 
-        let transaction = UserDataBase.transaction("Users", "readwrite");
+        let transaction = UserDataBase.transaction("ListOfCurrentUsers", "readwrite");
 
-        let ListOfCurentUsers = transaction.objectStrore("ListOfCurrentUsers");
+        let ListOfCurentUsers = transaction.objectStore("ListOfCurrentUsers");
+
+        let user = {
+
+            username: Username, 
+            password: Password,
+        };
+
+        let getRequest = ListOfCurentUsers.get('Username');
+        getRequest.onsuccess = function() {
+            if (getRequest.result) {
+                console.log("User already exists:", getRequest.result);
+            } else {
+                let addRequest = ListOfCurentUsers.add(user);
+                addRequest.onsuccess = function() {
+                    console.log("User added to the list", addRequest.result);
+                };
+                addRequest.onerror = function() {
+                    console.log("An error has occurred when trying to add a new user", addRequest.error);
+                };
+            }
+        };
+
+        request.onsuccess = function() {
+            console.log("User added to the list", request.result);
+        };
+          
+        request.onerror = function() {
+            console.log("An error has occured when trying to add a new user", request.error);
+        };
     }
 
 
