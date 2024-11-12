@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="TP2DataBase.js"></script>
+        <script defer src="TP2DataBase.js"></script>
         <link rel="stylesheet" href="TP2.css">
     </head>
     <body style="background-image: url(https://png.pngtree.com/background/20210715/original/pngtree-simple-cute-cat-paw-pet-background-picture-image_1282068.jpg)">
         <div class="LoginBox">
             <h1>Kitty Clicker :3</h1>
-            <form onclick="openLogIn(document.getElementById('username'), document.getElementById('password'))">
+            <form>
                 <input type="text" id="username" placeholder="Username" required>
                 <input type="password" id="password" placeholder="Password" required>
-                <input type="submit">
+                <button onclick="openLogIn(document.getElementById('username').value, document.getElementById('password').value)" >Connect</button>
             </form>
         </div>
 
