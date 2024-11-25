@@ -10,6 +10,9 @@ function openLogIn(Curr_Username, Curr_Password){
 
         UserDataBase.createIndex("username", "username", {unique: true});
         UserDataBase.createIndex("password", "password", {unique: false});
+        UserDataBase.createIndex("Item1", "Item1", {unique: true});
+        UserDataBase.createIndex("Item2", "Item2", {unique: false});
+        UserDataBase.createIndex("Item3", "Item3", {unique: true});
         
     }
 
@@ -48,7 +51,4 @@ function openLogIn(Curr_Username, Curr_Password){
             }
         };
     }
-
-
-
 }
