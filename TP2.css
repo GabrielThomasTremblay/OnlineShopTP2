@@ -14,3 +14,11 @@ h1{
     border-radius: 15%;
 
 }
+.NyanCat{
+
+    background: url(https://static.wikia.nocookie.net/nyancat/images/9/92/Original.gif/revision/latest/smart/width/386/height/259?cb=20130816204616);
+    width: 386px;
+    height: 259px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
