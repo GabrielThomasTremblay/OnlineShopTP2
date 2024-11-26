@@ -6,7 +6,7 @@
     <body style="background-image: url(https://png.pngtree.com/background/20210715/original/pngtree-simple-cute-cat-paw-pet-background-picture-image_1282068.jpg)">
         <div class="LoginBox">
             <h1>Kitty Clicker :3</h1>
-            <form>
+            <form onsubmit="return false">
                 <input type="text" id="username" placeholder="Username" required>
                 <input type="password" id="password" placeholder="Password" required>
                 <button onclick="openLogIn(document.getElementById('username').value, document.getElementById('password').value)" >Connect</button>
@@ -14,5 +14,5 @@
         </div>
 
     </body>
-    <script defer src="TP2DataBase.js"></script>
+    <script defer src="TP2Script.js"></script>
 </html>
