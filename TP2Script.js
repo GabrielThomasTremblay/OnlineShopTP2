@@ -10,9 +10,9 @@ function openLogIn(Curr_Username, Curr_Password){
 
         UserDataBase.createIndex("username", "username", {unique: true});
         UserDataBase.createIndex("password", "password", {unique: false});
-        UserDataBase.createIndex("Item1", "Item1", {unique: true});
+        UserDataBase.createIndex("Item1", "Item1", {unique: false});
         UserDataBase.createIndex("Item2", "Item2", {unique: false});
-        UserDataBase.createIndex("Item3", "Item3", {unique: true});
+        UserDataBase.createIndex("Item3", "Item3", {unique: false});
         UserDataBase.createIndex("NekoToken", "NekoToken", {unique: false});
         
     }
@@ -33,8 +33,8 @@ function openLogIn(Curr_Username, Curr_Password){
         let user = {
             username: Curr_Username, 
             password: Curr_Password,
-            Item1: false,
-            Item2: 0,
+            Item1: 0,
+            Item2: false,
             Item3: false,
             NekoToken: 0
         };
@@ -42,11 +42,20 @@ function openLogIn(Curr_Username, Curr_Password){
             let getRequest = store.get(Curr_Username);
             getRequest.onerror = function(event){
                 store.put(user,Curr_Username);
+                document.cookie = "item1 = 0"
+                document.cookie = "item2 = false"
+                document.cookie = "item3 = false"
+                document.cookie = "nekoToken = 0"
+                window.location.href='Game.html';
             };
             getRequest.onsuccess = function() {
                 if (getRequest.result) {
                     console.log("User already exists:");
                     if(getRequest.result.password == Curr_Password){
+                        document.cookie = "item1 =" + getRequest.result.Item1;
+                        document.cookie = "item2 =" + getRequest.result.Item2;
+                        document.cookie = "item3 =" + getRequest.result.Item3;
+                        document.cookie = "nekoToken =" + getRequest.result.NekoToken;
                         window.location.href='Game.html';
                     }
                     else{
@@ -56,6 +65,11 @@ function openLogIn(Curr_Username, Curr_Password){
                     let addRequest = store.put(user);
                     addRequest.onsuccess = function() {
                         console.log("User added to the list", addRequest.result);
+                        document.cookie = "item1 = 0"
+                        document.cookie = "item2 = false"
+                        document.cookie = "item3 = false"
+                        document.cookie = "NekoToken = 0"
+                        window.location.href='Game.html';
                     };
                     addRequest.onerror = function() {
                         console.log("An error has occurred when trying to add a new user", addRequest.error);
@@ -68,6 +82,9 @@ function openLogIn(Curr_Username, Curr_Password){
         }
     }
 }
+
+
+
 let Token = 0;
 let Mult = 1.0;
 let CatFood = 0;
