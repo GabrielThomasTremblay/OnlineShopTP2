@@ -2,6 +2,7 @@ h1{
     color: cyan;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     text-align: center;
+    user-select: none;
 }
 .LoginBox{
     
@@ -47,6 +48,7 @@ h1{
     background-position-y: center;
     background-size: 200px;
     vertical-align: top;
+    user-select: none;
 
     text-align: top;
     text-align: center;
@@ -63,11 +65,15 @@ img{
     margin-top: 10%;
     
 }
-.NyanCat{
+.Cat{
 
     background: url(https://static.wikia.nocookie.net/nyancat/images/9/92/Original.gif/revision/latest/smart/width/386/height/259?cb=20130816204616);
-    width: 386px;
-    height: 259px;
+    width: 300px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 250px;
     margin: 0 auto;
     margin-top: 5%;
 }
