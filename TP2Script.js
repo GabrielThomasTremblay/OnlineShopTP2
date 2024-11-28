@@ -68,3 +68,9 @@ function openLogIn(Curr_Username, Curr_Password){
         }
     }
 }
+let Token = 0;
+function Click(){
+    let VisToken = document.getElementById("Token");
+    Token = Token + 1;
+    VisToken.textContent = Token
+}
