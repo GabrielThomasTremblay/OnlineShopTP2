@@ -220,5 +220,5 @@ function BuyItem(Curr_Item){
                 ActiveMult();
                 break;
             }
-    }
+    }//
 }
