@@ -115,19 +115,9 @@ function LoadProfile(){
     CatFood = getCookie('item1');
     CatFood = Number(Token);
     BlueYarn = getCookie('item2');
-    if (BlueYarn == "true"){
-        BlueYarn == true;
-    }
-    else{
-        BlueYarn == false;
-    }
+    BlueYarn = Boolean(BlueYarn);
     BlueToad = getCookie('item3');
-    if (BlueToad == "true"){
-        BlueToad == true;
-    }
-    else{
-        BlueToad == false;
-    }
+    BlueToad = Boolean(BlueToad);
     Profile = getCookie('username');
     ActiveMult();
     let VisToken = document.getElementById("Token");
