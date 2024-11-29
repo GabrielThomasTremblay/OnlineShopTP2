@@ -110,11 +110,12 @@ function getCookie(cname) {
   }
 
 function LoadProfile(){
-    Token = getCookie(nekoToken);
-    CatFood = getCookie(item1);
-    BlueYarn = getCookie(item2);
-    BlueToad = getCookie(item3);
-    Profile = getCookie(username);
+    Token = getCookie('nekoToken');
+    CatFood = getCookie('item1');
+    BlueYarn = getCookie('item2');
+    BlueToad = getCookie('item3');
+    Profile = getCookie('username');
+    console.log(getCookie('username'));
 }
 function UpdateProfile(profile){
     let openRequest = window.indexedDB.open("Users", 1);

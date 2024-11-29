@@ -67,7 +67,7 @@ img{
 }
 .Cat{
 
-    background: url(https://static.wikia.nocookie.net/nyancat/images/9/92/Original.gif/revision/latest/smart/width/386/height/259?cb=20130816204616);
+    background: url('Picture/NyanCat.webp');
     width: 300px;
     height: 300px;
     background-repeat: no-repeat;
