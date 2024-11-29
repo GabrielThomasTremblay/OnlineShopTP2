@@ -115,9 +115,19 @@ function LoadProfile(){
     CatFood = getCookie('item1');
     CatFood = Number(Token);
     BlueYarn = getCookie('item2');
-    BlueYarn = Boolean(BlueYarn);
+    if (BlueYarn == "true"){
+        BlueYarn == true;
+    }
+    if (BlueYarn == "false"){
+        BlueYarn == false;
+    }
     BlueToad = getCookie('item3');
-    BlueToad = Boolean(BlueToad);
+    if (BlueToad == "true"){
+        BlueToad == true;
+    }
+    if (BlueToad == "false"){
+        BlueToad == false;
+    }
     Profile = getCookie('username');
     ActiveMult();
     let VisToken = document.getElementById("Token");
@@ -132,15 +142,15 @@ function UpdateProfile(profile){
         let getRequest = objectStore.get(profile);
     
         getRequest.onsuccess = function(event) {
-            let user = event.target.result; // Access the result here
+            let user = event.target.result; 
     
-            if (user) { // Check if user exists
+            if (user) {
                 user.Item1 = CatFood;
                 user.Item2 = BlueYarn;
                 user.Item3 = BlueToad;
                 user.NekoToken = Token;
     
-                // Update the user object in the object store
+                
                 objectStore.put(user);
             } else {
                 console.error("User not found");
