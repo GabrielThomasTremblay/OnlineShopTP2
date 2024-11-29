@@ -68,7 +68,7 @@ function openLogIn(Curr_Username, Curr_Password){
                         document.cookie = "item1 = 0"
                         document.cookie = "item2 = false"
                         document.cookie = "item3 = false"
-                        document.cookie = "NekoToken = 0"
+                        document.cookie = "nekoToken = 0"
                         window.location.href='Game.html';
                     };
                     addRequest.onerror = function() {
