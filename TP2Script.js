@@ -162,13 +162,13 @@ function Click(){
     UpdateProfile(Profile);
 }
 function ActiveMult(){
-    if(BlueYarn == true){
+    if(BlueYarn === true){
         let itemprice = document.getElementById("Item2");
         itemprice.textContent = "Bought";
 
         Mult = Mult + 0.1;
     }
-    if(BlueToad == true){
+    if(BlueToad === true){
         let itemprice = document.getElementById("Item3");
         itemprice.textContent = "Bought";
         
