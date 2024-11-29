@@ -111,11 +111,27 @@ function getCookie(cname) {
 
 function LoadProfile(){
     Token = getCookie('nekoToken');
+    Token = Number(Token);
     CatFood = getCookie('item1');
+    CatFood = Number(Token);
     BlueYarn = getCookie('item2');
+    if (BlueYarn == "true"){
+        BlueYarn == true;
+    }
+    else{
+        BlueYarn == false;
+    }
     BlueToad = getCookie('item3');
+    if (BlueToad == "true"){
+        BlueToad == true;
+    }
+    else{
+        BlueToad == false;
+    }
     Profile = getCookie('username');
-    console.log(getCookie('username'));
+    ActiveMult();
+    let VisToken = document.getElementById("Token");
+    VisToken.textContent = Token
 }
 function UpdateProfile(profile){
     let openRequest = window.indexedDB.open("Users", 1);
@@ -132,7 +148,7 @@ function UpdateProfile(profile){
                 user.Item1 = CatFood;
                 user.Item2 = BlueYarn;
                 user.Item3 = BlueToad;
-                user.nekoToken = Token;
+                user.NekoToken = Token;
     
                 // Update the user object in the object store
                 objectStore.put(user);
