@@ -113,7 +113,7 @@ function LoadProfile(){
     Token = getCookie('nekoToken');
     Token = Number(Token);
     CatFood = getCookie('item1');
-    CatFood = Number(Token);
+    CatFood = Number(CatFood);
     BlueYarn = getCookie('item2');
     if (BlueYarn == "true"){
         BlueYarn = true;
@@ -205,7 +205,7 @@ function BuyItem(Curr_Item){
             if(Token >= 10){
                 RemoveToken(10);
                 CatFood = CatFood + 1;
-                "item1 = " + CatFood;
+                document.cookie ="item1 = " + CatFood;
                 break;
             }
         case "Item2":
@@ -213,7 +213,7 @@ function BuyItem(Curr_Item){
                 RemoveToken(50);
                 BlueYarn = true;
                 ActiveMult();
-                "item2 = " + BlueYarn;
+                document.cookie ="item2 = " + BlueYarn;
                 break;
             }
         case "Item3":
@@ -221,7 +221,7 @@ function BuyItem(Curr_Item){
                 RemoveToken(200);
                 BlueToad = true;
                 ActiveMult();
-                "item3 = " + BlueToad;
+                document.cookie ="item3 = " + BlueToad;
                 break;
             }
     }
