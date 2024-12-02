@@ -224,5 +224,5 @@ function BuyItem(Curr_Item){
                 document.cookie ="item3 = " + BlueToad;
                 break;
             }
-    }
+    }//
 }
