@@ -116,17 +116,17 @@ function LoadProfile(){
     CatFood = Number(Token);
     BlueYarn = getCookie('item2');
     if (BlueYarn == "true"){
-        BlueYarn == true;
+        BlueYarn = true;
     }
     if (BlueYarn == "false"){
-        BlueYarn == false;
+        BlueYarn = false;
     }
     BlueToad = getCookie('item3');
     if (BlueToad == "true"){
-        BlueToad == true;
+        BlueToad = true;
     }
     if (BlueToad == "false"){
-        BlueToad == false;
+        BlueToad = false;
     }
     Profile = getCookie('username');
     ActiveMult();
