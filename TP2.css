@@ -11,10 +11,10 @@ h1{
     width: 500px;
     height: 300px;
     display: block;
-    position: absolute; /* Use absolute positioning */
-    top: 50%; /* Position from the top */
-    left: 50%; /* Position from the left */
-    transform: translate(-50%, -50%); /* Center the div */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
 }
 .NekoToken{
 
@@ -22,10 +22,8 @@ h1{
     font-size: 40PX;
     margin-left: 70%;
     margin-top: 0%;
-    
+    user-select: none;
     display: inline;
-
-    
 }
 .Shop{
 
@@ -34,6 +32,7 @@ h1{
     margin-top: 10%;
     width: 70%;
     height: auto;
+    user-select: none;
 }
 .Item{
 
@@ -58,14 +57,6 @@ h1{
     font-size: 40px;
     
 }
-img{
-    
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-    margin-top: 10%;
-    
-}
 .Cat{
 
     background: url('Picture/NyanCat.webp');
@@ -77,4 +68,20 @@ img{
     background-size: 250px;
     margin: 0 auto;
     margin-top: 5%;
+    user-select: none;
+}
+.Cat:active{
+    animation: Grow_Cat 1s;
+}
+.Item:hover{
+    animation: Grow_Item 1s;
+}
+
+@keyframes Grow_Cat{
+    0% {background-size: 300px;}
+    100% {background-size: 250px;}
+}
+@keyframes Grow_Item{
+    0% {background-size: 250px;}
+    100% {background-size: 200px;}
 }

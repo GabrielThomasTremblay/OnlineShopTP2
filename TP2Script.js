@@ -169,6 +169,7 @@ function Click(){
     Token = Token + ((1 + CatFood) * Mult);
     Token = Math.round(Token*100)/100;
     VisToken.textContent = Token
+    document.cookie = "nekoToken = "+ Token;
     UpdateProfile(Profile);
 }
 function ActiveMult(){
@@ -186,7 +187,7 @@ function ActiveMult(){
         UpdateCat('Picture/CatToad.png');
     }
 }
-function UpdatePrice(Price){
+function RemoveToken(Price){
     let VisToken = document.getElementById("Token");
     Token = Token - Price;
     Token = Math.round(Token*100)/100;
@@ -202,23 +203,26 @@ function BuyItem(Curr_Item){
     switch(Curr_Item){
         case "Item1":
             if(Token >= 10){
-                UpdatePrice(10);
+                RemoveToken(10);
                 CatFood = CatFood + 1;
+                "item1 = " + CatFood;
                 break;
             }
         case "Item2":
             if(Token >= 50 && BlueYarn == false){
-                UpdatePrice(50);
+                RemoveToken(50);
                 BlueYarn = true;
                 ActiveMult();
+                "item2 = " + BlueYarn;
                 break;
             }
         case "Item3":
             if(Token >= 200 && BlueToad == false){
-                UpdatePrice(200);
+                RemoveToken(200);
                 BlueToad = true;
                 ActiveMult();
+                "item3 = " + BlueToad;
                 break;
             }
-    }//
+    }
 }
